@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maness Software Consulting</title>
+  <title>Maness Software Consulting | Data &amp; AI Systems Built for Production</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet" />
@@ -54,15 +54,26 @@
     }
 
     .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
       font-family: 'Roboto', sans-serif;
       font-size: 1.1rem;
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--cream);
+      text-decoration: none;
     }
 
-    .nav-logo span {
+    .nav-logo img {
+      height: 2rem;
+      width: auto;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-text span {
       color: var(--gold);
     }
 
@@ -502,6 +513,109 @@
 
     footer .footer-logo span { color: var(--gold); }
 
+    /* ─── WORK ─── */
+    #work {
+      border-bottom: 1px solid rgba(201,146,42,0.12);
+    }
+
+    .work-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+      align-items: end;
+    }
+
+    .work-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 400px;
+      line-height: 1.8;
+      align-self: end;
+    }
+
+    .work-item {
+      display: grid;
+      grid-template-columns: 1fr 2.4fr;
+      gap: 4rem;
+      padding: 3rem 0;
+      border-top: 1px solid rgba(201,146,42,0.12);
+      transition: background 0.3s;
+    }
+
+    .work-item:hover {
+      background: rgba(201,146,42,0.03);
+    }
+
+    .work-number {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--gold);
+      opacity: 0.7;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+    }
+
+    .work-client {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .work-title {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .work-text {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .work-text strong {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    /* ─── HOW I WORK ─── */
+    #how-i-work {
+      padding-top: 0;
+    }
+
+    .how-panel {
+      background: rgba(201,146,42,0.04);
+      border-left: 2px solid var(--gold);
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .how-panel .section-heading {
+      font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+      margin-bottom: 0;
+      max-width: 320px;
+    }
+
+    .how-body {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+
+    .how-body strong {
+      color: var(--cream);
+      font-weight: 500;
+    }
+
     /* ─── ANIMATIONS ─── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
@@ -510,12 +624,25 @@
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
-      nav { padding: 1.2rem 1.5rem; }
+      nav {
+        padding: 1rem 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.6rem 0;
+      }
+      .nav-logo { font-size: 0.95rem; gap: 0.65rem; }
+      .nav-logo img { height: 1.6rem; }
+      .nav-links { gap: 1.5rem; }
+      .nav-links a { font-size: 0.72rem; }
+      #hero { padding-top: 10rem; }
       #hero, section { padding-left: 1.5rem; padding-right: 1.5rem; }
       .services-intro { grid-template-columns: 1fr; gap: 1.5rem; }
       .services-grid { grid-template-columns: 1fr; }
       #about { grid-template-columns: 1fr; gap: 2.5rem; }
       .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .work-intro { grid-template-columns: 1fr; gap: 1.5rem; }
+      .work-item { grid-template-columns: 1fr; gap: 1.5rem; padding: 2.5rem 0; }
+      .how-panel { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1.5rem; }
       .statement-row { padding-left: 1.5rem; padding-right: 1.5rem; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     }
@@ -525,9 +652,13 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Maness <span>Software</span> Consulting</div>
+  <a class="nav-logo" href="#hero" aria-label="Maness Software Consulting home">
+    <img src="maness_consulting_logo_gold.svg" alt="">
+    <span class="nav-logo-text">Maness <span>Software</span> Consulting</span>
+  </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
+    <li><a href="#work">Work</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -538,52 +669,28 @@
   <div class="hero-bg-line"></div>
   <p class="hero-eyebrow">Data &amp; AI Consulting</p>
   <h1 class="hero-heading">
-    Your data is ready.<br>
-    Are you using <em>all of it?</em>
+    Data and AI systems that ship and<br>
+    <em>keep running.</em>
   </h1>
   <p class="hero-sub">
-    Maness Software Consulting helps organizations turn raw data into decisions — and AI hype into real outcomes.
+    I build data platforms, analytics, and LLM features that hold up after launch: scoped to the real problem, built to be maintained, and handed to a team that can run them without me.
   </p>
   <div class="hero-cta">
-    <a href="#contact" class="btn-primary">Start a Conversation</a>
-    <a href="#services" class="btn-ghost">See What I Do</a>
+    <a href="#contact" class="btn-primary">Get in touch</a>
+    <a href="#services" class="btn-ghost">See what I do</a>
   </div>
 </section>
-
-<!-- STATEMENTS STRIP -->
-<div id="statements">
-  <div class="statement-row">
-    <span class="stmt-index">01</span>
-    <p class="stmt-text">Your biggest competitive edge isn't your product. <strong>It's the data you're already sitting on.</strong></p>
-    <span class="stmt-arrow">→</span>
-  </div>
-  <div class="statement-row">
-    <span class="stmt-index">02</span>
-    <p class="stmt-text"><strong>AI that doesn't ship</strong> is just a slide deck. I build things that run in production.</p>
-    <span class="stmt-arrow">→</span>
-  </div>
-  <div class="statement-row">
-    <span class="stmt-index">03</span>
-    <p class="stmt-text">Bad data in, bad decisions out. <strong>Data quality is strategy.</strong></p>
-    <span class="stmt-arrow">→</span>
-  </div>
-  <div class="statement-row">
-    <span class="stmt-index">04</span>
-    <p class="stmt-text">You don't need more dashboards. <strong>You need the right question.</strong></p>
-    <span class="stmt-arrow">→</span>
-  </div>
-</div>
 
 <!-- SERVICES -->
 <section id="services">
   <div class="services-intro">
     <div>
       <p class="section-label">What I Do</p>
-      <h2 class="section-heading">Where I can<br>move the needle</h2>
+      <h2 class="section-heading">Where I can help</h2>
       <div class="divider"></div>
     </div>
     <p class="services-desc">
-      I work with leadership teams and engineering orgs to scope, build, and deliver data and AI solutions that are actually used — not shelved after the demo.
+      I work with leadership and engineering teams to scope, build, and ship data and AI systems, and to make sure they're still earning their keep six months after launch.
     </p>
   </div>
 
@@ -591,39 +698,88 @@
     <div class="service-card">
       <p class="service-number">01 ——</p>
       <h3 class="service-title">Data Strategy &amp; Architecture</h3>
-      <p class="service-blurb">From fragmented spreadsheets to unified data infrastructure. I help you design the foundation your analytics and AI depend on.</p>
+      <p class="service-blurb">The foundation everything else rests on. I design the data platform your analytics and AI will depend on, whether you're starting from scattered spreadsheets or untangling a decade of one-off systems.</p>
       <div class="service-accent"></div>
     </div>
     <div class="service-card">
       <p class="service-number">02 ——</p>
       <h3 class="service-title">AI &amp; Machine Learning</h3>
-      <p class="service-blurb">Practical ML solutions — recommendation engines, forecasting, NLP, LLM integrations — scoped to your problem, not the trend cycle.</p>
+      <p class="service-blurb">Practical ML, sized to the problem in front of you: document understanding, agentic validation workflows, and custom PyTorch and TensorFlow models when off-the-shelf won't cut it.</p>
       <div class="service-accent"></div>
     </div>
     <div class="service-card">
       <p class="service-number">03 ——</p>
       <h3 class="service-title">Analytics &amp; Business Intelligence</h3>
-      <p class="service-blurb">Turn operational data into insight. I help teams ask better questions and build the reporting that actually informs decisions.</p>
+      <p class="service-blurb">Reporting that answers the questions your team is actually asking, built on operational data you'd be comfortable defending in a board meeting.</p>
       <div class="service-accent"></div>
     </div>
     <div class="service-card">
       <p class="service-number">04 ——</p>
       <h3 class="service-title">LLM &amp; Generative AI Integration</h3>
-      <p class="service-blurb">Cut through the noise. I scope and build GenAI features that deliver real ROI — not just impressive demos that don't survive contact with users.</p>
+      <p class="service-blurb">LLM features with a payoff you can measure. Scoped tightly, evaluated against real user behavior before launch, and shipped with the guardrails to keep them reliable after it.</p>
       <div class="service-accent"></div>
     </div>
     <div class="service-card">
       <p class="service-number">05 ——</p>
       <h3 class="service-title">Data Engineering</h3>
-      <p class="service-blurb">Pipelines, transformations, and warehouse design. Reliable data delivery so your models and analysts are never waiting on stale data.</p>
+      <p class="service-blurb">Pipelines, transformations, and warehouse design that deliver correct data on schedule, so your analysts and models stop waiting on yesterday's numbers.</p>
       <div class="service-accent"></div>
     </div>
     <div class="service-card">
       <p class="service-number">06 ——</p>
       <h3 class="service-title">Advisory &amp; Team Augmentation</h3>
-      <p class="service-blurb">Fractional data leadership, strategic reviews, or embedded sprint support. I plug in at whatever depth your team needs.</p>
+      <p class="service-blurb">Fractional data leadership, architecture reviews, or a senior engineer embedded in your sprints. As much or as little as your team needs, for exactly as long as it's useful.</p>
       <div class="service-accent"></div>
     </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="work-intro">
+    <div>
+      <p class="section-label">Selected Work</p>
+      <h2 class="section-heading">What this looks like<br>in practice</h2>
+      <div class="divider"></div>
+    </div>
+    <p class="work-desc">
+      A few engagements, with the outcome that mattered to the client. Details are anonymized.
+    </p>
+  </div>
+
+  <div class="work-list">
+    <article class="work-item">
+      <div class="work-meta">
+        <p class="work-number">01 ——</p>
+        <p class="work-client">Multibillion-dollar manufacturer</p>
+      </div>
+      <div class="work-body">
+        <h3 class="work-title">R&amp;D data platform</h3>
+        <p class="work-text">Test results from 12 machines lived in spreadsheets and were stitched together by hand; a single report took days. I built a system that catalogs every test as it runs. <strong>Recording a result now takes seconds</strong>, any past run can be pulled on demand, and the days of Excel work behind each report are gone.</p>
+      </div>
+    </article>
+
+    <article class="work-item">
+      <div class="work-meta">
+        <p class="work-number">02 ——</p>
+        <p class="work-client">Carbon-capture startup</p>
+      </div>
+      <div class="work-body">
+        <h3 class="work-title">Carbon reconciliation agent</h3>
+        <p class="work-text">Verifying how much carbon a process had captured took a contracted review team 4–6 weeks. I built an agent system that produces the full calculation autonomously <strong>in 45 minutes</strong>, with a human reviewer signing off on the result. In side-by-side tests it landed within 10% of the reviewer's independent figure. Reviewers now start from a finished report instead of raw data, cutting each review contract by 2–4 weeks and the cost that comes with it.</p>
+      </div>
+    </article>
+
+    <article class="work-item">
+      <div class="work-meta">
+        <p class="work-number">03 ——</p>
+        <p class="work-client">Ag tech startup</p>
+      </div>
+      <div class="work-body">
+        <h3 class="work-title">Streaming data lake</h3>
+        <p class="work-text">A weekly batch job meant every report was built on stale data nobody fully trusted. I moved their lake to a streaming medallion architecture with clear lineage. Data is now current, and <strong>reports that took weeks to assemble take minutes</strong>.</p>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -631,25 +787,39 @@
 <section id="about">
   <div class="about-left">
     <p class="section-label">About</p>
-    <h2 class="section-heading">The person behind the work</h2>
+    <h2 class="section-heading">Senior engineering, close to the work.</h2>
     <div class="divider"></div>
   </div>
   <div class="about-right">
     <p>
-      I'm <strong>Maness</strong> — an independent software consultant specializing in Data and AI. I've spent years helping companies bridge the gap between raw data and real business outcomes.
+      I'm <strong>Chris Maness</strong>, a principal-level engineer specializing in data and AI. I take on a small number of consulting engagements at a time, so each one gets my full attention. Over the past decade I've built data platforms and the products that run on them at every scale: a startup's first data stack, enterprise streaming data lakes, medallion architectures, and LLM and agentic systems carrying real production load.
     </p>
     <p>
-      Whether you're a startup trying to build your first data stack or an enterprise untangling years of technical debt, I bring the experience to assess the situation clearly and execute without ceremony.
+      Greenfield pipeline or years of accumulated technical debt, the approach is the same: see what's really there, be honest about what it needs, and get to work.
     </p>
     <p>
-      I care about <strong>solutions that actually stick</strong> — documented, maintainable, and owned by your team when the engagement ends.
+      The goal is to leave behind <strong>systems your team can own</strong>: documented, maintainable, and understood by the people who'll be running them long after I've moved on.
     </p>
     <div class="credentials">
-      <div class="credential">Deep expertise in Python, SQL, and modern data tooling</div>
-      <div class="credential">Experience across fintech, healthtech, SaaS, and e-commerce</div>
-      <div class="credential">Fluent in both the boardroom and the terminal</div>
-      <div class="credential">Focused on outcomes, not billable hours</div>
+      <div class="credential">Deep in Python, SQL, Spark/PySpark, Databricks, and AWS; at home across the full stack in TypeScript, Java, and C#</div>
+      <div class="credential">Shipped in fintech, enterprise SaaS, higher education, and federal research (U.S. Department of Energy)</div>
+      <div class="credential">Works across engineering, data science, security, legal, and executive teams, and translates between them</div>
+      <div class="credential">Production-minded: reliability, maintainability, and measurable outcomes come first</div>
+      <div class="credential">M.S. and B.S. in Computer Science, East Tennessee State University</div>
     </div>
+  </div>
+</section>
+
+<!-- HOW I WORK -->
+<section id="how-i-work">
+  <div class="how-panel">
+    <div>
+      <p class="section-label">How I Work</p>
+      <h2 class="section-heading">Built for how larger teams operate</h2>
+    </div>
+    <p class="how-body">
+      I've built inside SOC 2 and ISO 27001 environments, on U.S. Department of Energy projects, and with HIPAA-protected data. Vendor onboarding, security questionnaires, NDAs, and your existing change-management process are part of the job, not obstacles to it.
+    </p>
   </div>
 </section>
 
@@ -658,34 +828,40 @@
   <div class="contact-inner">
     <div class="contact-left">
       <p class="section-label">Let's Talk</p>
-      <h2 class="section-heading">Got a problem worth solving?</h2>
-      <p>Tell me what you're working on. No pitch decks, no discovery calls with an SDR — just a direct conversation about whether I can help.</p>
-      <p class="contact-tagline">"Clear thinking applied to messy data."</p>
+      <h2 class="section-heading">Tell me what you're working on</h2>
+      <p>Send a short description of the problem. You'll hear back from me directly, within one business day, with a straight answer on whether I can help.</p>
     </div>
     <div class="contact-right">
-      <form onsubmit="handleSubmit(event)">
+      <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="3c3b1117-a781-49d5-a3b8-685adb78a9c9">
+        <input type="hidden" name="subject" value="New inquiry from manessconsulting site">
+        <input type="hidden" name="from_name" value="Maness Software Consulting">
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none;" tabindex="-1" autocomplete="off">
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Your name" required />
+          <input type="text" id="name" name="name" placeholder="Your name" required />
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="you@company.com" required />
+          <input type="email" id="email" name="email" placeholder="you@company.com" required />
         </div>
         <div class="form-group">
           <label for="company">Company</label>
-          <input type="text" id="company" placeholder="Where you work" />
+          <input type="text" id="company" name="company" placeholder="Where you work" />
         </div>
         <div class="form-group">
           <label for="message">What are you trying to solve?</label>
-          <textarea id="message" placeholder="Give me the short version…" required></textarea>
+          <textarea id="message" name="message" placeholder="The short version is fine…" required></textarea>
         </div>
         <div class="form-submit">
-          <button type="submit" class="btn-primary" style="border:none;cursor:pointer;">Send It →</button>
+          <button type="submit" id="form-submit-btn" class="btn-primary" style="border:none;cursor:pointer;">Send</button>
         </div>
       </form>
-      <p id="form-success" style="display:none;margin-top:1.5rem;color:var(--gold);font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:600;">
-        Got it — I'll be in touch shortly.
+      <p id="form-success" style="display:none;margin-top:1.5rem;color:var(--gold);font-family:'Roboto',sans-serif;font-size:1.1rem;font-weight:600;">
+        Got it. You'll hear back from me directly within one business day.
+      </p>
+      <p id="form-error" style="display:none;margin-top:1.5rem;color:#c0392b;font-family:'Roboto',sans-serif;font-size:1rem;">
+        Something went wrong sending that. Please try again, or email me directly.
       </p>
     </div>
   </div>
@@ -694,15 +870,38 @@
 <!-- FOOTER -->
 <footer>
   <p class="footer-logo">Maness <span>Software</span> Consulting</p>
-  <p>© 2025 Maness Software Consulting. All rights reserved.</p>
+  <p>© 2026 Maness Software Consulting. All rights reserved.</p>
 </footer>
 
 <script>
-  function handleSubmit(e) {
+  const contactForm = document.getElementById('contact-form');
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    document.querySelector('form').style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
-  }
+    const btn = document.getElementById('form-submit-btn');
+    const errorEl = document.getElementById('form-error');
+    errorEl.style.display = 'none';
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    try {
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(contactForm)
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        contactForm.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        throw new Error(data.message || 'Submission failed');
+      }
+    } catch (err) {
+      console.error('Contact form error:', err);
+      errorEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Send';
+    }
+  });
 
   // Subtle scroll fade-in for service cards and statement rows
   const observer = new IntersectionObserver((entries) => {
@@ -715,6 +914,13 @@
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.service-card').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = `opacity 0.6s ${i * 0.08}s, transform 0.6s ${i * 0.08}s, background 0.3s`;
+    observer.observe(el);
+  });
+
+  document.querySelectorAll('.work-item').forEach((el, i) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(16px)';
     el.style.transition = `opacity 0.6s ${i * 0.08}s, transform 0.6s ${i * 0.08}s, background 0.3s`;
