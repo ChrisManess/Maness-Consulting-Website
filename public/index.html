@@ -625,28 +625,119 @@
     }
 
     /* ─── RESPONSIVE ─── */
+
+    /* Tablet / small laptop: collapse the two-column layouts, trim the gutters. */
     @media (max-width: 900px) {
       nav {
-        padding: 1rem 1.5rem;
+        padding: 1rem 2rem;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.6rem 0;
+        gap: 0.55rem 2rem;
       }
       .nav-logo { font-size: 0.95rem; gap: 0.65rem; }
       .nav-logo img { height: 1.6rem; }
-      .nav-links { gap: 1.5rem; }
+      .nav-links { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
       .nav-links a { font-size: 0.72rem; }
-      #hero { padding-top: 10rem; }
-      #hero, section { padding-left: 1.5rem; padding-right: 1.5rem; }
-      .services-intro { grid-template-columns: 1fr; gap: 1.5rem; }
-      .services-grid { grid-template-columns: 1fr; }
-      #about { grid-template-columns: 1fr; gap: 2.5rem; }
+
+      #hero, section { padding-left: 2rem; padding-right: 2rem; }
+      #hero { padding-top: 9rem; padding-bottom: 3.5rem; }
+      section { padding-top: 5rem; padding-bottom: 5rem; }
+      footer { padding: 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+      .statement-row { padding-left: 2rem; padding-right: 2rem; }
+
+      .services-intro { grid-template-columns: 1fr; gap: 1.25rem; margin-bottom: 3rem; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-desc, .work-desc { max-width: 520px; }
+      #about { grid-template-columns: 1fr; gap: 2rem; }
+      .about-right { padding-top: 0; }
+      .about-left .section-heading { max-width: none; }
       .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      .work-intro { grid-template-columns: 1fr; gap: 1.5rem; }
-      .work-item { grid-template-columns: 1fr; gap: 1.5rem; padding: 2.5rem 0; }
-      .how-panel { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1.5rem; }
-      .statement-row { padding-left: 1.5rem; padding-right: 1.5rem; }
-      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .contact-left p { max-width: 520px; }
+      .work-intro { grid-template-columns: 1fr; gap: 1.25rem; margin-bottom: 2.5rem; }
+      .work-item { grid-template-columns: 1fr; gap: 1.25rem; padding: 2.5rem 0; }
+      .how-panel { grid-template-columns: 1fr; gap: 1.25rem; padding: 2rem; }
+      .how-panel .section-heading { max-width: none; }
+    }
+
+    /* Phones: tighten vertical rhythm so the page reads as intentional, not stretched. */
+    @media (max-width: 768px) {
+      #hero, section { padding-left: 1.5rem; padding-right: 1.5rem; }
+      #hero { padding-top: 8.5rem; padding-bottom: 3rem; }
+      section { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+      footer { padding: 1.75rem 1.5rem; }
+      .statement-row { padding: 1.6rem 1.5rem; gap: 1.25rem; }
+
+      /* Decorative hero rule sits on top of the headline once it goes full-width. */
+      .hero-bg-line { display: none; }
+      .hero-eyebrow { margin-bottom: 1.25rem; }
+      .hero-sub { margin-top: 1.5rem; font-size: 1rem; line-height: 1.6; }
+      .hero-cta { margin-top: 2.25rem; gap: 1.25rem; flex-wrap: wrap; }
+
+      .section-label { margin-bottom: 0.75rem; }
+      .section-heading { margin-bottom: 0.75rem; }
+      .divider { margin: 1.25rem 0; }
+
+      .services-intro { gap: 0.75rem; margin-bottom: 2rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { padding: 1.75rem 1.5rem; }
+      .service-number { margin-bottom: 1rem; }
+      .service-title { margin-bottom: 0.65rem; }
+      .service-blurb { line-height: 1.65; }
+      .services-desc, .work-desc { font-size: 0.95rem; line-height: 1.7; max-width: none; }
+
+      .work-intro { gap: 0.75rem; margin-bottom: 1.75rem; }
+      .work-item { gap: 0.9rem; padding: 2rem 0; }
+      .work-number { margin-bottom: 0.4rem; }
+      .work-title { font-size: 1.3rem; margin-bottom: 0.75rem; }
+      .work-text { font-size: 0.92rem; line-height: 1.7; }
+
+      #about { gap: 1.5rem; }
+      .about-right p { font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; }
+      .credentials { margin-top: 1.75rem; gap: 0.85rem; }
+      .credential { align-items: flex-start; gap: 0.85rem; line-height: 1.6; }
+      .credential::before { margin-top: 0.5em; }
+
+      .how-panel { padding: 1.75rem 1.5rem; gap: 1rem; }
+      .how-body { font-size: 0.95rem; line-height: 1.7; }
+
+      .contact-inner { gap: 2rem; }
+      .contact-left p { font-size: 0.95rem; line-height: 1.7; max-width: none; margin-top: 0.75rem; }
+      .contact-tagline { margin-top: 2rem; }
+      .form-group { margin-bottom: 1.25rem; }
+      /* 16px keeps iOS from zooming the viewport on focus. */
+      input, textarea { font-size: 1rem; }
+      textarea { height: 110px; }
+      .form-submit { margin-top: 1.5rem; }
+    }
+
+    /* Small phones: a final pass of tightening. */
+    @media (max-width: 480px) {
+      nav { padding: 0.85rem 1.25rem; gap: 0.5rem 1.25rem; }
+      .nav-logo { font-size: 0.82rem; gap: 0.5rem; letter-spacing: 0.1em; }
+      .nav-logo img { height: 1.4rem; }
+      .nav-links { gap: 1.15rem; }
+      .nav-links a { font-size: 0.68rem; }
+
+      #hero, section { padding-left: 1.25rem; padding-right: 1.25rem; }
+      #hero { padding-top: 7.5rem; padding-bottom: 2.5rem; }
+      section { padding-top: 3rem; padding-bottom: 3rem; }
+      footer { padding: 1.5rem 1.25rem; }
+      .statement-row { padding-left: 1.25rem; padding-right: 1.25rem; }
+
+      .hero-sub { margin-top: 1.25rem; font-size: 0.95rem; }
+      .hero-cta { margin-top: 2rem; gap: 1rem; }
+      .btn-primary { padding: 0.8rem 1.6rem; }
+
+      .section-heading { font-size: 1.8rem; }
+      .divider { margin: 1rem 0; }
+
+      .services-intro { margin-bottom: 1.5rem; }
+      .service-card { padding: 1.5rem 1.25rem; }
+      .work-intro { margin-bottom: 1.5rem; }
+      .work-item { padding: 1.75rem 0; }
+      .how-panel { padding: 1.5rem 1.25rem; }
+      .credentials { margin-top: 1.5rem; }
+      textarea { height: 100px; }
     }
   </style>
 </head>
