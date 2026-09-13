@@ -626,6 +626,35 @@
 
     /* ─── RESPONSIVE ─── */
 
+    /* Below the desktop width the headline reaches past the 30% mark, so the
+       decorative rule anchors to the right edge of the content column instead
+       of running through the text. */
+    @media (max-width: 1279px) {
+      .hero-bg-line { right: 4rem; }
+    }
+
+    /* Large tablets / small laptops: three service cards get too narrow here. */
+    @media (max-width: 1200px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* 11–13" tablets and small laptops: step the gutters down towards the
+       tablet layout instead of dropping straight from 4rem to 2rem. */
+    @media (max-width: 1100px) {
+      nav { padding: 1.25rem 3rem; }
+      #hero, section { padding-left: 3rem; padding-right: 3rem; }
+      section { padding-top: 6rem; padding-bottom: 6rem; }
+      footer { padding: 2rem 3rem; }
+      .statement-row { padding-left: 3rem; padding-right: 3rem; }
+      .hero-bg-line { right: 3rem; }
+
+      .services-intro, .work-intro { gap: 3rem; }
+      .work-item { gap: 3rem; }
+      #about { gap: 4rem; }
+      .how-panel { gap: 3rem; padding: 2.5rem; }
+      .contact-inner { gap: 4rem; }
+    }
+
     /* Tablet / small laptop: collapse the two-column layouts, trim the gutters. */
     @media (max-width: 900px) {
       nav {
@@ -644,23 +673,30 @@
       section { padding-top: 5rem; padding-bottom: 5rem; }
       footer { padding: 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
       .statement-row { padding-left: 2rem; padding-right: 2rem; }
+      .hero-bg-line { right: 2rem; }
 
       .services-intro { grid-template-columns: 1fr; gap: 1.25rem; margin-bottom: 3rem; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .service-card { padding: 2rem 1.5rem; }
       .services-desc, .work-desc { max-width: 520px; }
       #about { grid-template-columns: 1fr; gap: 2rem; }
       .about-right { padding-top: 0; }
       .about-left .section-heading { max-width: none; }
       .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .contact-left p { max-width: 520px; }
+      .contact-right { max-width: 34rem; }
       .work-intro { grid-template-columns: 1fr; gap: 1.25rem; margin-bottom: 2.5rem; }
       .work-item { grid-template-columns: 1fr; gap: 1.25rem; padding: 2.5rem 0; }
       .how-panel { grid-template-columns: 1fr; gap: 1.25rem; padding: 2rem; }
       .how-panel .section-heading { max-width: none; }
+      /* Single column here, so cap the measure rather than let prose run the
+         full width of a tablet. */
+      .about-right p, .credentials, .how-body, .work-text { max-width: 34rem; }
     }
 
     /* Phones: tighten vertical rhythm so the page reads as intentional, not stretched. */
-    @media (max-width: 768px) {
+    @media (max-width: 700px) {
+      nav { padding-left: 1.5rem; padding-right: 1.5rem; }
       #hero, section { padding-left: 1.5rem; padding-right: 1.5rem; }
       #hero { padding-top: 8.5rem; padding-bottom: 3rem; }
       section { padding-top: 3.5rem; padding-bottom: 3.5rem; }
