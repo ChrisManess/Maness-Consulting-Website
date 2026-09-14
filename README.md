@@ -9,8 +9,7 @@ Static marketing site for Maness Software Consulting, hosted on AWS Amplify.
 ├── amplify.yml        # Amplify Hosting build spec (no build step, serves public/)
 ├── public/            # Everything in here is deployed as-is
 │   ├── index.html
-│   ├── favicon.ico
-│   └── images/        # Logo SVGs
+│   └── favicon.ico
 └── docs/              # Local drafts and reference material (gitignored)
 ```
 
